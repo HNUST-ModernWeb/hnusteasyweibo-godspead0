@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易社交分享平台 - 发布</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>简易社交分享平台</h1>
+    </div>
+    <div class="nav">
+        <a href="index.html">主页</a>
+        <a href="publish.html">发布</a>
+        <a href="profile.html">个人主页</a>
+    </div>
+    <div class="container">
+        <div class="publish-form">
+            <h2>发布新内容</h2>
+            <form id="publishForm">
+                <div class="form-group">
+                    <label for="content">内容</label>
+                    <textarea id="content" placeholder="分享你的想法..."></textarea>
+                </div>
+                <div class="image-upload">
+                    <input type="file" id="image" accept="image/*">
+                    <label for="image">📷 点击上传图片</label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel">取消</button>
+                    <button type="submit" class="btn btn-submit">发布</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2026 简易社交分享平台</p>
+    </div>
+    <script>
+        document.getElementById('publishForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = document.getElementById('content').value;
+            if (content.trim() === '') {
+                alert('请输入内容');
+                return;
+            }
+            alert('发布成功！');
+            window.location.href = 'index.html';
+        });
+        document.querySelector('.btn-cancel').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
